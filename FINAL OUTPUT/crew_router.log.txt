@@ -1,0 +1,84 @@
+2026-10-30 05:34:42: task_name="None", task="User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-30 05:34:44: task_name="None", task="User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"pdf_search","reason":"The BLEU score achieved by the Transformer (big) model on WMT 2014 English-to-German is detailed in the 'Attention Is All You Need' paper.","search_query":"BLEU score Transformer big model WMT 2014 English-German site:arxiv.org"}"
+2026-10-30 07:22:27: task_name="None", task="User question: 'How does the Transformer encode the position of words, given that it has no recurrence?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-30 07:22:30: task_name="None", task="User question: 'How does the Transformer encode the position of words, given that it has no recurrence?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"pdf_search","reason":"The question pertains to how the Transformer architecture encodes positional information, which is discussed in detail in the 'Attention Is All You Need' paper.","search_query":"How does the Transformer encode the position of words without recurrence in the Attention Is All You Need paper?"}"
+2026-10-30 07:22:44: task_name="None", task="User question: 'What are the latest large language models released by OpenAI and Google this year?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-30 07:22:46: task_name="None", task="User question: 'What are the latest large language models released by OpenAI and Google this year?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"web_search","reason":"The question asks for the latest large language models released this year, which requires current information not covered in the 2017 paper.","search_query":"latest large language models released by OpenAI and Google in 2023"}"
+2026-10-30 07:23:57: task_name="None", task="User question: 'What is the current latest version of the CrewAI Python package?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-30 07:23:59: task_name="None", task="User question: 'What is the current latest version of the CrewAI Python package?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"web_search","reason":"The question asks for the latest version of a specific Python package, which requires current information not covered in the 2017 Transformer paper.","search_query":"latest version of CrewAI Python package"}"
+2026-10-30 07:25:51: task_name="None", task="User question: 'Convert 25 degrees Celsius to Fahrenheit.'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-30 07:25:53: task_name="None", task="User question: 'Convert 25 degrees Celsius to Fahrenheit.'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"direct_llm","reason":"This is a simple conversion question that does not require any external information or retrieval from the paper.","search_query":"Convert 25 degrees Celsius to Fahrenheit."}"
+2026-10-30 07:38:39: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-30 07:38:40: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"pdf_search","reason":"The question specifically asks about multi-head attention and its role in the Transformer, which is covered in detail in the 'Attention Is All You Need' paper.","search_query":"multi-head attention Transformer site:arxiv.org"}"

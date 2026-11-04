@@ -1,0 +1,20 @@
+2026-10-29 13:50:39: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+Router decision: route=pdf_search; reason=Keyword fallback: Transformer-paper terms.
+
+Use the PDF search tool with the query 'What is multi-head attention and why does the Transformer use it?' (you may refine it and search again once). Cite the paper section(s) the evidence comes from.
+Answer ONLY with information supported by the retrieved evidence. If the evidence is insufficient, say so.", agent="Retrieval Specialist", status="started"
+2026-10-29 13:59:07: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+Router decision: route=pdf_search; reason=The question specifically asks about multi-head attention and its purpose in the Transformer, which is covered in detail in the 'Attention Is All You Need' paper.
+
+Use the PDF search tool with the query 'What is multi-head attention and why does the Transformer use it site:arxiv.org/abs/1706.03762' (you may refine it and search again once). Cite the paper section(s) the evidence comes from.
+Answer ONLY with information supported by the retrieved evidence. If the evidence is insufficient, say so.", agent="Retrieval Specialist", status="started"
+2026-10-29 13:59:13: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+Router decision: route=pdf_search; reason=The question specifically asks about multi-head attention and its purpose in the Transformer, which is covered in detail in the 'Attention Is All You Need' paper.
+
+Use the PDF search tool with the query 'What is multi-head attention and why does the Transformer use it site:arxiv.org/abs/1706.03762' (you may refine it and search again once). Cite the paper section(s) the evidence comes from.
+Answer ONLY with information supported by the retrieved evidence. If the evidence is insufficient, say so.", agent="Retrieval Specialist", status="completed", output="Multi-head attention is a mechanism used in the Transformer model that allows it to jointly attend to information from different representation subspaces at different positions. Instead of performing a single attention function, multi-head attention projects the queries, keys, and values multiple times (h times) with different learned linear projections. Each of these projected versions undergoes the attention function in parallel, and the resulting outputs are concatenated and projected again to form the final output. This approach helps mitigate the averaging effect that can occur with a single attention head, allowing the model to capture more nuanced relationships in the data.
+
+The Transformer employs multi-head attention in various ways, including in encoder-decoder attention layers and self-attention layers. In encoder-decoder attention, the queries come from the decoder, while the keys and values come from the encoder's output, enabling the decoder to attend to all positions in the input sequence. Self-attention layers allow the model to relate different positions of a single sequence to compute a comprehensive representation of that sequence.
+
+Sources:
+- "Attention Is All You Need," Section 3.2: Attention."

@@ -1,0 +1,90 @@
+Router Agent (the receptionist):
+
+
+router_agent = Agent(
+    role="Query Router",
+    goal="Classify each user question and choose the single best retrieval path: pdf_search, web_search or direct_llm.",
+    backstory=(
+        "You are an expert at understanding information needs. " + PDF_SCOPE +
+        " Route to pdf_search when the question is about anything in that paper. "
+        "Route to web_search when the question needs current, recent or external information... "
+        "Route to direct_llm only for simple general-knowledge... questions. "
+        "You never answer the question yourself."
+    ),
+    llm=router_llm,
+    tools=[],
+    ...
+)
+
+
+Retriever Agent (the researcher)
+
+Agent(
+    role="Retrieval Specialist",
+    goal="Retrieve evidence with the assigned tool and write an accurate, concise answer grounded ONLY in that evidence, with sources.",
+    backstory="You are a meticulous research assistant. You always call your tool before answering, ... cite sources ... say when the evidence is insufficient instead of guessing.",
+    tools=tools,
+    ...
+)
+
+
+===========================
+role, goal and backstory are the agent's instructions. That's all an "agent" really is: an AI model plus a set of instructions plus, optionally, some tools.
+
+===========================
+
+
+
+3. How CrewAI turns this into a working agent?
+Behind the scenes, CrewAI combines your text into one big message (a prompt) and sends it to OpenAI. For the Router, the message looks roughly like this:
+You are Query Router. You are an expert at understanding information needs.
+The PDF knowledge base is the 2017 research paper 'Attention Is All You Need'...
+Route to pdf_search when... Route to web_search when...
+Your personal goal is: Classify each user question and choose the single best retrieval path...
+
+Current Task: User question: 'What is multi-head attention?'
+Decide the single best retrieval route: ...
+
+This is the expected criteria for your final answer: A JSON object with fields route, reason and search_query.
+
+
+=======================================================
+
+Thought:      I need to search the PDF for multi-head attention.
+Action:       Search a PDF's content
+Action Input: {"query": "multi-head attention"}
+Observation:  <text chunks returned from the PDF>          ← CrewAI runs the tool and pastes the result back
+Thought:      I now have enough information.
+Final Answer: Multi-head attention runs several attention operations in parallel... Sources: Section 3.2.2
+
+This think → use a tool → read the result → think again loop is what makes it an agent rather than a plain chatbot. CrewAI runs the loop for you: it reads the AI's "Action," calls the real Python tool, and feeds the result back to the AI.
+
+
+====================================================
+
+
+Your notebook (Section 5)          CrewAI                         OpenAI (GPT)
+──────────────────────────         ──────────────────────         ─────────────
+role + goal + backstory   ──►  builds the prompt         ──►  reads & decides
+Task description          ──►  adds the question/job     ──►  replies (JSON / Action)
+tools=[...]               ──►  runs the tool when asked  ◄──  "Action: Search PDF"
+                               feeds result back         ──►  writes Final Answer
+
+============================================
+
+
+IMP:
+
+CrewAI is a Python library: a folder of ready-written Python code files that your notebook can use.
+
+What happens when you run %pip install crewai
+pip (Python's installer) goes to PyPI (pypi.org), the public online store for Python libraries.
+It downloads the CrewAI package, plus the other libraries CrewAI needs.
+It unpacks everything into a special folder called site-packages (on Colab, dist-packages).
+That's all. It's like copying a folder of someone else's code onto your machine.
+
+Where it's stored
+In Colab: on Google's computer, not yours. Colab gives you a temporary computer in the cloud
+
+
+

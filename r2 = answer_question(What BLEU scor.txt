@@ -1,0 +1,1526 @@
+r2 = answer_question("What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?")
+show(r2)
+
+INFO:agentic_rag:[fefd94] Coordinator      question       What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?
+INFO:agentic_rag:[fefd94] Coordinator      handoff        Question sent to Router Agent
+
+==========================================================================================
+▶ RUN fefd94 | QUESTION: What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?
+==========================================================================================
+  📝 Coordinator      | question       | What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?
+  📝 Coordinator      | handoff        | Question sent to Router Agent
+╭─────────────────────────────────────────── 🚀 Crew Execution Started ───────────────────────────────────────────╮
+│                                                                                                                 │
+│  Crew Execution Started                                                                                         │
+│  Name: crew                                                                                                     │
+│  ID: ea354cba-db2a-40d1-9c06-78515d09a837                                                                       │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────── 📋 Task Started ────────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Task Started                                                                                                   │
+│  Name: User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'  │
+│                                                                                                                 │
+│  Decide the single best retrieval route:                                                                        │
+│  - pdf_search: answerable from the 'Attention Is All You Need' Transformer paper                                │
+│  - web_search: needs fresh / external / post-2017 information from the internet                                 │
+│  - direct_llm: simple general question that needs no retrieval                                                  │
+│  Also write an optimised search_query for the chosen tool.                                                      │
+│  ID: d0f4c24c-6286-4aca-840d-dbe948579336                                                                       │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Agent: Query Router                                                                                            │
+│                                                                                                                 │
+│  Task: User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'  │
+│                                                                                                                 │
+│  Decide the single best retrieval route:                                                                        │
+│  - pdf_search: answerable from the 'Attention Is All You Need' Transformer paper                                │
+│  - web_search: needs fresh / external / post-2017 information from the internet                                 │
+│  - direct_llm: simple general question that needs no retrieval                                                  │
+│  Also write an optimised search_query for the chosen tool.                                                      │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+[Finalize] todos_count=0, todos_with_results=0
+╭───────────────────────────────────────────── ✅ Agent Final Answer ─────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Agent: Query Router                                                                                            │
+│                                                                                                                 │
+│  Final Answer:                                                                                                  │
+│  route='pdf_search' reason="The BLEU score achieved by the Transformer (big) model on WMT 2014                  │
+│  English-to-German is detailed in the 'Attention Is All You Need' paper." search_query='BLEU score Transformer  │
+│  big model WMT 2014 English-German site:arxiv.org'                                                              │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+INFO:agentic_rag:[fefd94] Query Router     task_done      {"route":"pdf_search","reason":"The BLEU score achieved by the Transformer (big) model on WMT 2014 English-to-German is detailed in the 'Attention Is  ...
+  📝 Query Router     | task_done      | {"route":"pdf_search","reason":"The BLEU score achieved by the Transformer (big) model on WMT 2014 English-to-German is  ...
+╭────────────────────────────────────────────── 📋 Task Completion ───────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Task Completed                                                                                                 │
+│  Name: User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'  │
+│                                                                                                                 │
+│  Decide the single best retrieval route:                                                                        │
+│  - pdf_search: answerable from the 'Attention Is All You Need' Transformer paper                                │
+│  - web_search: needs fresh / external / post-2017 information from the internet                                 │
+│  - direct_llm: simple general question that needs no retrieval                                                  │
+│  Also write an optimised search_query for the chosen tool.                                                      │
+│  Agent: Query Router                                                                                            │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────── Crew Completion ────────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Crew Execution Completed                                                                                       │
+│  Name: crew                                                                                                     │
+│  ID: ea354cba-db2a-40d1-9c06-78515d09a837                                                                       │
+│  Final Output: {"route":"pdf_search","reason":"The BLEU score achieved by the Transformer (big) model on WMT    │
+│  2014 English-to-German is detailed in the 'Attention Is All You Need' paper.","search_query":"BLEU score       │
+│  Transformer big model WMT 2014 English-German site:arxiv.org"}                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+INFO:agentic_rag:[fefd94] Router Agent     decision       route=pdf_search | query='BLEU score Transformer big model WMT 2014 English-German site:arxiv.org' | reason=The BLEU score achieved by the Transformer ...
+INFO:agentic_rag:[fefd94] Coordinator      handoff        Decision sent to Retriever Agent with tools=["Search a PDF's content"]
+  📝 Router Agent     | decision       | route=pdf_search | query='BLEU score Transformer big model WMT 2014 English-German site:arxiv.org' | reason=The BLEU sco ...
+  📝 Coordinator      | handoff        | Decision sent to Retriever Agent with tools=["Search a PDF's content"]
+/usr/local/lib/python3.13/dist-packages/pydantic/main.py:250: UserWarning: A function callback cannot be saved in a checkpoint; it is dropped and will not run after a restore. Use a module-level named function instead.
+  validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+╭─────────────────────────────────────────── 🚀 Crew Execution Started ───────────────────────────────────────────╮
+│                                                                                                                 │
+│  Crew Execution Started                                                                                         │
+│  Name: crew                                                                                                     │
+│  ID: 1750dfc1-e69d-4804-b770-1fe9c899a9b4                                                                       │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────── 📋 Task Started ────────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Task Started                                                                                                   │
+│  Name: User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'  │
+│  Router decision: route=pdf_search; reason=The BLEU score achieved by the Transformer (big) model on WMT 2014   │
+│  English-to-German is detailed in the 'Attention Is All You Need' paper.                                        │
+│                                                                                                                 │
+│  Use the PDF search tool with the query 'BLEU score Transformer big model WMT 2014 English-German               │
+│  site:arxiv.org' (you may refine it and search again once). Cite the paper section(s) the evidence comes from.  │
+│  Answer ONLY with information supported by the retrieved evidence. If the evidence is insufficient, say so.     │
+│  ID: aafdb017-afa0-4a78-bcc8-f1b7da8f0eda                                                                       │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Agent: Retrieval Specialist                                                                                    │
+│                                                                                                                 │
+│  Task: User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'  │
+│  Router decision: route=pdf_search; reason=The BLEU score achieved by the Transformer (big) model on WMT 2014   │
+│  English-to-German is detailed in the 'Attention Is All You Need' paper.                                        │
+│                                                                                                                 │
+│  Use the PDF search tool with the query 'BLEU score Transformer big model WMT 2014 English-German               │
+│  site:arxiv.org' (you may refine it and search again once). Cite the paper section(s) the evidence comes from.  │
+│  Answer ONLY with information supported by the retrieved evidence. If the evidence is insufficient, say so.     │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────── 🔧 Tool Execution Started (#1) ─────────────────────────────────────────╮
+│                                                                                                                 │
+│  Tool: search_a_pdfs_content                                                                                    │
+│  Args: {'query': 'BLEU score Transformer big model WMT 2014 English-German site:arxiv.org'}                     │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────── ✅ Tool Execution Completed (#1) ────────────────────────────────────────╮
+│                                                                                                                 │
+│  Tool Completed                                                                                                 │
+│  Tool: search_a_pdfs_content                                                                                    │
+│  Output: Relevant Content:                                                                                      │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  Page 8:                                                                                                        │
+│                                                                                                                 │
+│  Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the              │
+│                                                                                                                 │
+│  English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.                 │
+│                                                                                                                 │
+│  Model                                                                                                          │
+│                                                                                                                 │
+│  BLEU                                                                                                           │
+│                                                                                                                 │
+│  Training Cost (FLOPs)                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  ByteNet [18]                                                                                                   │
+│                                                                                                                 │
+│  23.75                                                                                                          │
+│                                                                                                                 │
+│  Deep-Att + PosUnk [39]                                                                                         │
+│                                                                                                                 │
+│  39.2                                                                                                           │
+│                                                                                                                 │
+│  1.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL [38]                                                                                                 │
+│                                                                                                                 │
+│  24.6                                                                                                           │
+│                                                                                                                 │
+│  39.92                                                                                                          │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.4 · 1020                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S [9]                                                                                                    │
+│                                                                                                                 │
+│  25.16                                                                                                          │
+│                                                                                                                 │
+│  40.46                                                                                                          │
+│                                                                                                                 │
+│  9.6 · 1018                                                                                                     │
+│                                                                                                                 │
+│  1.5 · 1020                                                                                                     │
+│                                                                                                                 │
+│  MoE [32]                                                                                                       │
+│                                                                                                                 │
+│  26.03                                                                                                          │
+│                                                                                                                 │
+│  40.56                                                                                                          │
+│                                                                                                                 │
+│  2.0 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1020                                                                                                     │
+│                                                                                                                 │
+│  Deep-Att + PosUnk Ensemble [39]                                                                                │
+│                                                                                                                 │
+│  40.4                                                                                                           │
+│                                                                                                                 │
+│  8.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL Ensemble [38]                                                                                        │
+│                                                                                                                 │
+│  26.30                                                                                                          │
+│                                                                                                                 │
+│  41.16                                                                                                          │
+│                                                                                                                 │
+│  1.8 · 1020                                                                                                     │
+│                                                                                                                 │
+│  1.1 · 1021                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S Ensemble [9]                                                                                           │
+│                                                                                                                 │
+│  26.36                                                                                                          │
+│                                                                                                                 │
+│  41.29                                                                                                          │
+│                                                                                                                 │
+│  7.7 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1021                                                                                                     │
+│                                                                                                                 │
+│  Transformer (base model)                                                                                       │
+│                                                                                                                 │
+│  27.3                                                                                                           │
+│                                                                                                                 │
+│  38.1                                                                                                           │
+│                                                                                                                 │
+│  3.3 · 1018                                                                                                     │
+│                                                                                                                 │
+│  Transformer (big)                                                                                              │
+│                                                                                                                 │
+│  28.4                                                                                                           │
+│                                                                                                                 │
+│  41.8                                                                                                           │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  Residual Dropout                                                                                               │
+│                                                                                                                 │
+│  We apply dropout [33] to the output of each sub-layer, before it is added to the                               │
+│                                                                                                                 │
+│  sub-layer input and normalized. In addition, we apply dropout to the sums of the embeddings and the            │
+│                                                                                                                 │
+│  positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of              │
+│                                                                                                                 │
+│  Pdrop = 0.1.                                                                                                   │
+│                                                                                                                 │
+│  Label Smoothing                                                                                                │
+│                                                                                                                 │
+│  During training, we employed label smoothing of value ϵls = 0.1 [36]. This                                     │
+│                                                                                                                 │
+│  hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score.                 │
+│                                                                                                                 │
+│  6                                                                                                              │
+│                                                                                                                 │
+│  Results                                                                                                        │
+│                                                                                                                 │
+│  6.1                                                                                                            │
+│                                                                                                                 │
+│  Machine Translation                                                                                            │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)               │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  Page 8:                                                                                                        │
+│                                                                                                                 │
+│  Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the              │
+│                                                                                                                 │
+│  English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.                 │
+│                                                                                                                 │
+│  Model                                                                                                          │
+│                                                                                                                 │
+│  BLEU                                                                                                           │
+│                                                                                                                 │
+│  Training Cost (FLOPs)                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  ByteNet [18]                                                                                                   │
+│                                                                                                                 │
+│  23.75                                                                                                          │
+│                                                                                                                 │
+│  Deep-Att + PosUnk [39]                                                                                         │
+│                                                                                                                 │
+│  39.2                                                                                                           │
+│                                                                                                                 │
+│  1.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL [38]                                                                                                 │
+│                                                                                                                 │
+│  24.6                                                                                                           │
+│                                                                                                                 │
+│  39.92                                                                                                          │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.4 · 1020                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S [9]                                                                                                    │
+│                                                                                                                 │
+│  25.16                                                                                                          │
+│                                                                                                                 │
+│  40.46                                                                                                          │
+│                                                                                                                 │
+│  9.6 · 1018                                                                                                     │
+│                                                                                                                 │
+│  1.5 · 1020                                                                                                     │
+│                                                                                                                 │
+│  MoE [32]                                                                                                       │
+│                                                                                                                 │
+│  26.03                                                                                                          │
+│                                                                                                                 │
+│  40.56                                                                                                          │
+│                                                                                                                 │
+│  2.0 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1020                                                                                                     │
+│                                                                                                                 │
+│  Deep-Att + PosUnk Ensemble [39]                                                                                │
+│                                                                                                                 │
+│  40.4                                                                                                           │
+│                                                                                                                 │
+│  8.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL Ensemble [38]                                                                                        │
+│                                                                                                                 │
+│  26.30                                                                                                          │
+│                                                                                                                 │
+│  41.16                                                                                                          │
+│                                                                                                                 │
+│  1.8 · 1020                                                                                                     │
+│                                                                                                                 │
+│  1.1 · 1021                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S Ensemble [9]                                                                                           │
+│                                                                                                                 │
+│  26.36                                                                                                          │
+│                                                                                                                 │
+│  41.29                                                                                                          │
+│                                                                                                                 │
+│  7.7 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1021                                                                                                     │
+│                                                                                                                 │
+│  Transformer (base model)                                                                                       │
+│                                                                                                                 │
+│  27.3                                                                                                           │
+│                                                                                                                 │
+│  38.1                                                                                                           │
+│                                                                                                                 │
+│  3.3 · 1018                                                                                                     │
+│                                                                                                                 │
+│  Transformer (big)                                                                                              │
+│                                                                                                                 │
+│  28.4                                                                                                           │
+│                                                                                                                 │
+│  41.8                                                                                                           │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  Residual Dropout                                                                                               │
+│                                                                                                                 │
+│  We apply dropout [33] to the output of each sub-layer, before it is added to the                               │
+│                                                                                                                 │
+│  sub-layer input and normalized. In addition, we apply dropout to the sums of the embeddings and the            │
+│                                                                                                                 │
+│  positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of              │
+│                                                                                                                 │
+│  Pdrop = 0.1.                                                                                                   │
+│                                                                                                                 │
+│  Label Smoothing                                                                                                │
+│                                                                                                                 │
+│  During training, we employed label smoothing of value ϵls = 0.1 [36]. This                                     │
+│                                                                                                                 │
+│  hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score.                 │
+│                                                                                                                 │
+│  6                                                                                                              │
+│                                                                                                                 │
+│  Results                                                                                                        │
+│                                                                                                                 │
+│  6.1                                                                                                            │
+│                                                                                                                 │
+│  Machine Translation                                                                                            │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)               │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│  BLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is               │
+│                                                                                                                 │
+│  listed in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model               │
+│                                                                                                                 │
+│  surpasses all previously published models and ensembles, at a fraction of the training cost of any of          │
+│                                                                                                                 │
+│  the competitive models.                                                                                        │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,               │
+│                                                                                                                 │
+│  outperforming all of the previously published single models, at less than 1/4 the training cost of the         │
+│                                                                                                                 │
+│  previous state-of-the-art model. The Transformer (big) model trained for English-to-French used                │
+│                                                                                                                 │
+│  dropout rate Pdrop = 0.1, instead of 0.3.                                                                      │
+│                                                                                                                 │
+│  For the base models, we used a single model obtained by averaging the last 5 checkpoints, which                │
+│                                                                                                                 │
+│  were written at 10-minute intervals. For the big models, we averaged the last 20 checkpoints. We               │
+│                                                                                                                 │
+│  used beam search with a beam size of 4 and length penalty α = 0.6 [38]. These hyperparameters                  │
+│                                                                                                                 │
+│  were chosen after experimentation on the development set. We set the maximum output length during              │
+│                                                                                                                 │
+│  inference to input length + 50, but terminate early when possible [38].                                        │
+│                                                                                                                 │
+│  Table 2 summarizes our results and compares our translation quality and training costs to other model          │
+│                                                                                                                 │
+│  architectures from the literature. We estimate the number of floating point operations used to train a         │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  Page 8:                                                                                                        │
+│                                                                                                                 │
+│  Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the              │
+│                                                                                                                 │
+│  English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.                 │
+│                                                                                                                 │
+│  Model                                                                                                          │
+│                                                                                                                 │
+│  BLEU                                                                                                           │
+│                                                                                                                 │
+│  Training Cost (FLOPs)                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  ByteNet [18]                                                                                                   │
+│                                                                                                                 │
+│  23.75                                                                                                          │
+│                                                                                                                 │
+│  Deep-Att + PosUnk [39]                                                                                         │
+│                                                                                                                 │
+│  39.2                                                                                                           │
+│                                                                                                                 │
+│  1.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL [38]                                                                                                 │
+│                                                                                                                 │
+│  24.6                                                                                                           │
+│                                                                                                                 │
+│  39.92                                                                                                          │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.4 · 1020                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S [9]                                                                                                    │
+│                                                                                                                 │
+│  25.16                                                                                                          │
+│                                                                                                                 │
+│  40.46                                                                                                          │
+│                                                                                                                 │
+│  9.6 · 1018                                                                                                     │
+│                                                                                                                 │
+│  1.5 · 1020                                                                                                     │
+│                                                                                                                 │
+│  MoE [32]                                                                                                       │
+│                                                                                                                 │
+│  26.03                                                                                                          │
+│                                                                                                                 │
+│  40.56                                                                                                          │
+│                                                                                                                 │
+│  2.0 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1020                                                                                                     │
+│                                                                                                                 │
+│  Deep-Att + PosUnk Ensemble [39]                                                                                │
+│                                                                                                                 │
+│  40.4                                                                                                           │
+│                                                                                                                 │
+│  8.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL Ensemble [38]                                                                                        │
+│                                                                                                                 │
+│  26.30                                                                                                          │
+│                                                                                                                 │
+│  41.16                                                                                                          │
+│                                                                                                                 │
+│  1.8 · 1020                                                                                                     │
+│                                                                                                                 │
+│  1.1 · 1021                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S Ensemble [9]                                                                                           │
+│                                                                                                                 │
+│  26.36                                                                                                          │
+│                                                                                                                 │
+│  41.29                                                                                                          │
+│                                                                                                                 │
+│  7.7 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1021                                                                                                     │
+│                                                                                                                 │
+│  Transformer (base model)                                                                                       │
+│                                                                                                                 │
+│  27.3                                                                                                           │
+│                                                                                                                 │
+│  38.1                                                                                                           │
+│                                                                                                                 │
+│  3.3 · 1018                                                                                                     │
+│                                                                                                                 │
+│  Transformer (big)                                                                                              │
+│                                                                                                                 │
+│  28.4                                                                                                           │
+│                                                                                                                 │
+│  41.8                                                                                                           │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  Residual Dropout                                                                                               │
+│                                                                                                                 │
+│  We apply dropout [33] to the output of each sub-layer, before it is added to the                               │
+│                                                                                                                 │
+│  sub-layer input and normalized. In addition, we apply dropout to the sums of the embeddings and the            │
+│                                                                                                                 │
+│  positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of              │
+│                                                                                                                 │
+│  Pdrop = 0.1.                                                                                                   │
+│                                                                                                                 │
+│  Label Smoothing                                                                                                │
+│                                                                                                                 │
+│  During training, we employed label smoothing of value ϵls = 0.1 [36]. This                                     │
+│                                                                                                                 │
+│  hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score.                 │
+│                                                                                                                 │
+│  6                                                                                                              │
+│                                                                                                                 │
+│  Results                                                                                                        │
+│                                                                                                                 │
+│  6.1                                                                                                            │
+│                                                                                                                 │
+│  Machine Translation                                                                                            │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)               │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│  BLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is               │
+│                                                                                                                 │
+│  listed in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model               │
+│                                                                                                                 │
+│  surpasses all previously published models and ensembles, at a fraction of the training cost of any of          │
+│                                                                                                                 │
+│  the competitive models.                                                                                        │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,               │
+│                                                                                                                 │
+│  outperforming all of the previously published single models, at less than 1/4 the training cost of the         │
+│                                                                                                                 │
+│  previous state-of-the-art model. The Transformer (big) model trained for English-to-French used                │
+│                                                                                                                 │
+│  dropout rate Pdrop = 0.1, instead of 0.3.                                                                      │
+│                                                                                                                 │
+│  For the base models, we used a single model obtained by averaging the last 5 checkpoints, which                │
+│                                                                                                                 │
+│  were written at 10-minute intervals. For the big models, we averaged the last 20 checkpoints. We               │
+│                                                                                                                 │
+│  used beam search with a beam size of 4 and length penalty α = 0.6 [38]. These hyperparameters                  │
+│                                                                                                                 │
+│  were chosen after experimentation on the development set. We set the maximum output length during              │
+│                                                                                                                 │
+│  inference to input length + 50, but terminate early when possible [38].                                        │
+│                                                                                                                 │
+│  Table 2 summarizes our results and compares our translation quality and training costs to other model          │
+│                                                                                                                 │
+│  architectures from the literature. We estimate the number of floating point operations used to train a         │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│  BLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is               │
+│                                                                                                                 │
+│  listed in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model               │
+│                                                                                                                 │
+│  surpasses all previously published models and ensembles, at a fraction of the training cost of any of          │
+│                                                                                                                 │
+│  the competitive models.                                                                                        │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,               │
+│                                                                                                                 │
+│  outperforming all of the previously published single models, at less than 1/4 the training cost of the         │
+│                                                                                                                 │
+│  previous state-of-the-art model. The Transformer (big) model trained for English-to-French used                │
+│                                                                                                                 │
+│  dropout rate Pdrop = 0.1, instead of 0.3.                                                                      │
+│                                                                                                                 │
+│  For the base models, we used a single model obtained by averaging the last 5 checkpoints, which                │
+│                                                                                                                 │
+│  were written at 10-minute intervals. For the big models, we averaged the last 20 checkpoints. We               │
+│                                                                                                                 │
+│  used beam search with a beam size of 4 and length penalty α = 0.6 [38]. These hyperparameters                  │
+│                                                                                                                 │
+│  were chosen after experimentation on the development set. We set the maximum output length during              │
+│                                                                                                                 │
+│  inference to input length + 50, but terminate early when possible [38].                                        │
+│                                                                                                                 │
+│  Table 2 summarizes our results and compares our translation quality and training costs to other model          │
+│                                                                                                                 │
+│  architectures from the literature. We estimate the number of floating point operations used to train a         │
+│                                                                                                                 │
+│                                                                                                                 │
+│  architectures from the literature. We estimate the number of floating point operations used to train a         │
+│                                                                                                                 │
+│  model by multiplying the training time, the number of GPUs used, and an estimate of the sustained              │
+│                                                                                                                 │
+│  single-precision floating-point capacity of each GPU 5.                                                        │
+│                                                                                                                 │
+│  6.2                                                                                                            │
+│                                                                                                                 │
+│  Model Variations                                                                                               │
+│                                                                                                                 │
+│  To evaluate the importance of different components of the Transformer, we varied our base model                │
+│                                                                                                                 │
+│  in different ways, measuring the change in performance on English-to-German translation on the                 │
+│                                                                                                                 │
+│  5We used values of 2.8, 3.7, 6.0 and 9.5 TFLOPS for K80, K40, M40 and P100, respectively.                      │
+│                                                                                                                 │
+│  8                                                                                                              │
+│                                                                                                                 │
+│                                                                                                                 │
+│  the approach we take in our model.                                                                             │
+│                                                                                                                 │
+│  As side benefit, self-attention could yield more interpretable models. We inspect attention distributions      │
+│                                                                                                                 │
+│  from our models and present and discuss examples in the appendix. Not only do individual attention             │
+│                                                                                                                 │
+│  heads clearly learn to perform different tasks, many appear to exhibit behavior related to the syntactic       │
+│                                                                                                                 │
+│  and semantic structure of the sentences.                                                                       │
+│                                                                                                                 │
+│  5                                                                                                              │
+│                                                                                                                 │
+│  Training                                                                                                       │
+│                                                                                                                 │
+│  This section describes the training regime for our models.                                                     │
+│                                                                                                                 │
+│  5.1                                                                                                            │
+│                                                                                                                 │
+│  Training Data and Batching                                                                                     │
+│                                                                                                                 │
+│  We trained on the standard WMT 2014 English-German dataset consisting of about 4.5 million                     │
+│                                                                                                                 │
+│  sentence pairs. Sentences were encoded using byte-pair encoding [3], which has a shared source-                │
+│                                                                                                                 │
+│  target vocabulary of about 37000 tokens. For English-French, we used the significantly larger WMT              │
+│                                                                                                                 │
+│  2014 English-French dataset consisting of 36M sentences and split tokens into a 32000 word-piece               │
+│                                                                                                                 │
+│  vocabulary [38]. Sentence pairs were batched together by approximate sequence length. Each training            │
+│                                                                                                                 │
+│  batch contained a set of sentence pairs containing approximately 25000 source tokens and 25000                 │
+│                                                                                                                 │
+│  target tokens.                                                                                                 │
+│                                                                                                                 │
+│  5.2                                                                                                            │
+│                                                                                                                 │
+│  Hardware and Schedule                                                                                          │
+│                                                                                                                 │
+│  We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base models using                        │
+│                                                                                                                 │
+│  the hyperparameters described throughout the paper, each training step took about 0.4 seconds. We              │
+│                                                                                                                 │
+│  trained the base models for a total of 100,000 steps or 12 hours. For our big models,(described on the         │
+│                                                                                                                 │
+│                                                                                                                 │
+│  trained the base models for a total of 100,000 steps or 12 hours. For our big models,(described on the         │
+│                                                                                                                 │
+│  bottom line of table 3), step time was 1.0 seconds. The big models were trained for 300,000 steps              │
+│                                                                                                                 │
+│  (3.5 days).                                                                                                    │
+│                                                                                                                 │
+│  5.3                                                                                                            │
+│                                                                                                                 │
+│  Optimizer                                                                                                      │
+│                                                                                                                 │
+│  We used the Adam optimizer [20] with β1 = 0.9, β2 = 0.98 and ϵ = 10−9. We varied the learning                  │
+│                                                                                                                 │
+│  rate over the course of training, according to the formula:                                                    │
+│                                                                                                                 │
+│  lrate = d−0.5                                                                                                  │
+│                                                                                                                 │
+│  model · min(step_num−0.5, step_num · warmup_steps−1.5)                                                         │
+│                                                                                                                 │
+│  (3)                                                                                                            │
+│                                                                                                                 │
+│  This corresponds to increasing the learning rate linearly for the first warmup_steps training steps,           │
+│                                                                                                                 │
+│  and decreasing it thereafter proportionally to the inverse square root of the step number. We used             │
+│                                                                                                                 │
+│  warmup_steps = 4000.                                                                                           │
+│                                                                                                                 │
+│  5.4                                                                                                            │
+│                                                                                                                 │
+│  Regularization                                                                                                 │
+│                                                                                                                 │
+│  We employ three types of regularization during training:                                                       │
+│                                                                                                                 │
+│  7                                                                                                              │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  Page 8:                                                                                                        │
+│                                                                                                                 │
+│  Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the              │
+│                                                                                                                 │
+│  English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.                 │
+│                                                                                                                 │
+│  Model                                                                                                          │
+│                                                                                                                 │
+│  BLEU                                                                                                           │
+│                                                                                                                 │
+│  Training Cost (FLOPs)                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  EN-DE                                                                                                          │
+│                                                                                                                 │
+│  EN-FR                                                                                                          │
+│                                                                                                                 │
+│  ByteNet [18]                                                                                                   │
+│                                                                                                                 │
+│  23.75                                                                                                          │
+│                                                                                                                 │
+│  Deep-Att + PosUnk [39]                                                                                         │
+│                                                                                                                 │
+│  39.2                                                                                                           │
+│                                                                                                                 │
+│  1.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL [38]                                                                                                 │
+│                                                                                                                 │
+│  24.6                                                                                                           │
+│                                                                                                                 │
+│  39.92                                                                                                          │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.4 · 1020                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S [9]                                                                                                    │
+│                                                                                                                 │
+│  25.16                                                                                                          │
+│                                                                                                                 │
+│  40.46                                                                                                          │
+│                                                                                                                 │
+│  9.6 · 1018                                                                                                     │
+│                                                                                                                 │
+│  1.5 · 1020                                                                                                     │
+│                                                                                                                 │
+│  MoE [32]                                                                                                       │
+│                                                                                                                 │
+│  26.03                                                                                                          │
+│                                                                                                                 │
+│  40.56                                                                                                          │
+│                                                                                                                 │
+│  2.0 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1020                                                                                                     │
+│                                                                                                                 │
+│  Deep-Att + PosUnk Ensemble [39]                                                                                │
+│                                                                                                                 │
+│  40.4                                                                                                           │
+│                                                                                                                 │
+│  8.0 · 1020                                                                                                     │
+│                                                                                                                 │
+│  GNMT + RL Ensemble [38]                                                                                        │
+│                                                                                                                 │
+│  26.30                                                                                                          │
+│                                                                                                                 │
+│  41.16                                                                                                          │
+│                                                                                                                 │
+│  1.8 · 1020                                                                                                     │
+│                                                                                                                 │
+│  1.1 · 1021                                                                                                     │
+│                                                                                                                 │
+│  ConvS2S Ensemble [9]                                                                                           │
+│                                                                                                                 │
+│  26.36                                                                                                          │
+│                                                                                                                 │
+│  41.29                                                                                                          │
+│                                                                                                                 │
+│  7.7 · 1019                                                                                                     │
+│                                                                                                                 │
+│  1.2 · 1021                                                                                                     │
+│                                                                                                                 │
+│  Transformer (base model)                                                                                       │
+│                                                                                                                 │
+│  27.3                                                                                                           │
+│                                                                                                                 │
+│  38.1                                                                                                           │
+│                                                                                                                 │
+│  3.3 · 1018                                                                                                     │
+│                                                                                                                 │
+│  Transformer (big)                                                                                              │
+│                                                                                                                 │
+│  28.4                                                                                                           │
+│                                                                                                                 │
+│  41.8                                                                                                           │
+│                                                                                                                 │
+│  2.3 · 1019                                                                                                     │
+│                                                                                                                 │
+│  Residual Dropout                                                                                               │
+│                                                                                                                 │
+│  We apply dropout [33] to the output of each sub-layer, before it is added to the                               │
+│                                                                                                                 │
+│  sub-layer input and normalized. In addition, we apply dropout to the sums of the embeddings and the            │
+│                                                                                                                 │
+│  positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of              │
+│                                                                                                                 │
+│  Pdrop = 0.1.                                                                                                   │
+│                                                                                                                 │
+│  Label Smoothing                                                                                                │
+│                                                                                                                 │
+│  During training, we employed label smoothing of value ϵls = 0.1 [36]. This                                     │
+│                                                                                                                 │
+│  hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score.                 │
+│                                                                                                                 │
+│  6                                                                                                              │
+│                                                                                                                 │
+│  Results                                                                                                        │
+│                                                                                                                 │
+│  6.1                                                                                                            │
+│                                                                                                                 │
+│  Machine Translation                                                                                            │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)               │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│                                                                                                                 │
+│  in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0             │
+│                                                                                                                 │
+│  BLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is               │
+│                                                                                                                 │
+│  listed in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model               │
+│                                                                                                                 │
+│  surpasses all previously published models and ensembles, at a fraction of the training cost of any of          │
+│                                                                                                                 │
+│  the competitive models.                                                                                        │
+│                                                                                                                 │
+│  On the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,               │
+│                                                                                                                 │
+│  outperforming all of the previously published single models, at less than 1/4 the training cost of the         │
+│                                                                                                                 │
+│  previous state-of-the-art model. The Transformer (big) model trained for English-to-French used                │
+│                                                                                                                 │
+│  dropout rate Pdrop = 0.1, instead of 0.3.                                                                      │
+│                                                                                                                 │
+│  For the base models, we used a single model obtained by averaging the last 5 checkpoints, which                │
+│                                                                                                                 │
+│  were written at 10-minute intervals. For the big models, we averaged the last 20 checkpoints. We               │
+│                                                                                                                 │
+│  used beam search with a beam size of 4 and length penalty α = 0.6 [38]. These hyperparameters                  │
+│                                                                                                                 │
+│  were chosen after experimentation on the development set. We set the maximum output length during              │
+│                                                                                                                 │
+│  inference to input length + 50, but terminate early when possible [38].                                        │
+│                                                                                                                 │
+│  Table 2 summarizes our results and compares our translation quality and training costs to other model          │
+│                                                                                                                 │
+│  architectures from the literature. We estimate the number of floating point operations used to train a         │
+│                                                                                                                 │
+│                                                                                                                 │
+│  architectures from the literature. We estimate the number of floating point operations used to train a         │
+│                                                                                                                 │
+│  model by multiplying the training time, the number of GPUs used, and an estimate of the sustained              │
+│                                                                                                                 │
+│  single-precision floating-point capacity of each GPU 5.                                                        │
+│                                                                                                                 │
+│  6.2                                                                                                            │
+│                                                                                                                 │
+│  Model Variations                                                                                               │
+│                                                                                                                 │
+│  To evaluate the importance of different components of the Transformer, we varied our base model                │
+│                                                                                                                 │
+│  in different ways, measuring the change in performance on English-to-German translation on the                 │
+│                                                                                                                 │
+│  5We used values of 2.8, 3.7, 6.0 and 9.5 TFLOPS for K80, K40, M40 and P100, respectively.                      │
+│                                                                                                                 │
+│  8                                                                                                              │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  Page 9:                                                                                                        │
+│                                                                                                                 │
+│  Table 3: Variations on the Transformer architecture. Unlisted values are identical to those of the base        │
+│                                                                                                                 │
+│  model. All metrics are on the English-to-German translation development set, newstest2013. Listed              │
+│                                                                                                                 │
+│  perplexities are per-wordpiece, according to our byte-pair encoding, and should not be compared to             │
+│                                                                                                                 │
+│  per-word perplexities.                                                                                         │
+│                                                                                                                 │
+│  N                                                                                                              │
+│                                                                                                                 │
+│  dmodel                                                                                                         │
+│                                                                                                                 │
+│  dff                                                                                                            │
+│                                                                                                                 │
+│  h                                                                                                              │
+│                                                                                                                 │
+│  dk                                                                                                             │
+│                                                                                                                 │
+│  dv                                                                                                             │
+│                                                                                                                 │
+│  Pdrop                                                                                                          │
+│                                                                                                                 │
+│  ϵls                                                                                                            │
+│                                                                                                                 │
+│  train                                                                                                          │
+│                                                                                                                 │
+│  PPL                                                                                                            │
+│                                                                                                                 │
+│  BLEU                                                                                                           │
+│                                                                                                                 │
+│  params                                                                                                         │
+│                                                                                                                 │
+│  steps                                                                                                          │
+│                                                                                                                 │
+│  (dev)                                                                                                          │
+│                                                                                                                 │
+│  (dev)                                                                                                          │
+│                                                                                                                 │
+│  ×106                                                                                                           │
+│                                                                                                                 │
+│  base                                                                                                           │
+│                                                                                                                 │
+│  6                                                                                                              │
+│                                                                                                                 │
+│  512                                                                                                            │
+│                                                                                                                 │
+│  2048                                                                                                           │
+│                                                                                                                 │
+│  8                                                                                                              │
+│                                                                                                                 │
+│  64                                                                                                             │
+│                                                                                                                 │
+│  64                                                                                                             │
+│                                                                                                                 │
+│  0.1                                                                                                            │
+│                                                                                                                 │
+│  0.1                                                                                                            │
+│                                                                                                                 │
+│  100K                                                                                                           │
+│                                                                                                                 │
+│  4.92                                                                                                           │
+│                                                                                                                 │
+│  25.8                                                                                                           │
+│                                                                                                                 │
+│  65                                                                                                             │
+│                                                                                                                 │
+│  (A)                                                                                                            │
+│                                                                                                                 │
+│  1                                                                                                              │
+│                                                                                                                 │
+│  512                                                                                                            │
+│                                                                                                                 │
+│  512                                                                                                            │
+│                                                                                                                 │
+│  5.29                                                                                                           │
+│                                                                                                                 │
+│  24.9                                                                                                           │
+│                                                                                                                 │
+│  4                                                                                                              │
+│                                                                                                                 │
+│  128                                                                                                            │
+│                                                                                                                 │
+│  128                                                                                                            │
+│                                                                                                                 │
+│  5.00                                                                                                           │
+│                                                                                                                 │
+│  25.5                                                                                                           │
+│                                                                                                                 │
+│  16                                                                                                             │
+│                                                                                                                 │
+│  32                                                                                                             │
+│                                                                                                                 │
+│  32                                                                                                             │
+│                                                                                                                 │
+│  4.91                                                                                                           │
+│                                                                                                                 │
+│  25.8                                                                                                           │
+│                                                                                                                 │
+│  32                                                                                                             │
+│                                                                                                                 │
+│  16                                                                                                             │
+│                                                                                                                 │
+│  16                                                                                                             │
+│                                                                                                                 │
+│  5.01                                                                                                           │
+│                                                                                                                 │
+│  25.4                                                                                                           │
+│                                                                                                                 │
+│  (B)                                                                                                            │
+│                                                                                                                 │
+│  16                                                                                                             │
+│                                                                                                                 │
+│  5.16                                                                                                           │
+│                                                                                                                 │
+│  25.1                                                                                                           │
+│                                                                                                                 │
+│  58                                                                                                             │
+│                                                                                                                 │
+│  32                                                                                                             │
+│                                                                                                                 │
+│  5.01                                                                                                           │
+│                                                                                                                 │
+│  25.4                                                                                                           │
+│                                                                                                                 │
+│  60                                                                                                             │
+│                                                                                                                 │
+│  (C)                                                                                                            │
+│                                                                                                                 │
+│  2                                                                                                              │
+│                                                                                                                 │
+│  6.11                                                                                                           │
+│                                                                                                                 │
+│  23.7                                                                                                           │
+│                                                                                                                 │
+│  36                                                                                                             │
+│                                                                                                                 │
+│  4                                                                                                              │
+│                                                                                                                 │
+│  5.19                                                                                                           │
+│                                                                                                                 │
+│  25.3                                                                                                           │
+│                                                                                                                 │
+│  50                                                                                                             │
+│                                                                                                                 │
+│  8                                                                                                              │
+│                                                                                                                 │
+│  4.88                                                                                                           │
+│                                                                                                                 │
+│  25.5                                                                                                           │
+│                                                                                                                 │
+│  80                                                                                                             │
+│                                                                                                                 │
+│  256                                                                                                            │
+│                                                                                                                 │
+│  32                                                                                                             │
+│                                                                                                                 │
+│  32                                                                                                             │
+│                                                                                                                 │
+│  5.75                                                                                                           │
+│                                                                                                                 │
+│  24.5                                                                                                           │
+│                                                                                                                 │
+│  28                                                                                                             │
+│                                                                                                                 │
+│  1024                                                                                                           │
+│                                                                                                                 │
+│  128                                                                                                            │
+│                                                                                                                 │
+│  128                                                                                                            │
+│                                                                                                                 │
+│  4.66                                                                                                           │
+│                                                                                                                 │
+│  26.0                                                                                                           │
+│                                                                                                                 │
+│  168                                                                                                            │
+│                                                                                                                 │
+│  1024                                                                                                           │
+│                                                                                                                 │
+│  5.12                                                                                                           │
+│                                                                                                                 │
+│  25.4                                                                                                           │
+│                                                                                                                 │
+│  53                                                                                                             │
+│                                                                                                                 │
+│  4096                                                                                                           │
+│                                                                                                                 │
+│  4.75                                                                                                           │
+│                                                                                                                 │
+│  26.2                                                                                                           │
+│                                                                                                                 │
+│  90                                                                                                             │
+│                                                                                                                 │
+│  (D)                                                                                                            │
+│                                                                                                                 │
+│  0.0                                                                                                            │
+│                                                                                                                 │
+│  5.77                                                                                                           │
+│                                                                                                                 │
+│  24.6                                                                                                           │
+│                                                                                                                 │
+│  0.2                                                                                                            │
+│                                                                                                                 │
+│  4.95                                                                                                           │
+│                                                                                                                 │
+│  25.5                                                                                                           │
+│                                                                                                                 │
+│  0.0                                                                                                            │
+│                                                                                                                 │
+│  4.67                                                                                                           │
+│                                                                                                                 │
+│  25.3                                                                                                           │
+│                                                                                                                 │
+│  0.2                                                                                                            │
+│                                                                                                                 │
+│  5.47                                                                                                           │
+│                                                                                                                 │
+│  25.7                                                                                                           │
+│                                                                                                                 │
+│  (E)                                                                                                            │
+│                                                                                                                 │
+│  positional embedding instead of sinusoids                                                                      │
+│                                                                                                                 │
+│  4.92                                                                                                           │
+│                                                                                                                 │
+│  25.7                                                                                                           │
+│                                                                                                                 │
+│  big                                                                                                            │
+│                                                                                                                 │
+│  6                                                                                                              │
+│                                                                                                                 │
+│  1024                                                                                                           │
+│                                                                                                                 │
+│  4096                                                                                                           │
+│                                                                                                                 │
+│  16                                                                                                             │
+│                                                                                                                 │
+│  0.3                                                                                                            │
+│                                                                                                                 │
+│  300K                                                                                                           │
+│                                                                                                                 │
+│  4.33                                                                                                           │
+│                                                                                                                 │
+│  26.4                                                                                                           │
+│                                                                                                                 │
+│  213                                                                                                            │
+│                                                                                                                 │
+│  development set, newstest2013. We used beam search as described in the previous section, but no                │
+│                                                                                                                 │
+│  checkpoint averaging. We present these results in Table 3.                                                     │
+│                                                                                                                 │
+│  In Table 3 rows (A), we vary the number of attention heads and the attention key and value dimensions,         │
+│                                                                                                                 │
+│  keeping the amount of computation constant, as described in Section 3.2.2. While single-head                   │
+│                                                                                                                 │
+│  attention is 0.9 BLEU worse than the best setting, quality also drops off with too many heads.                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,                                 │
+│                                                                                                                 │
+│  our model establishes a new single-model state-of-the-art BLEU score of 41.8 after                             │
+│                                                                                                                 │
+│  training for 3.5 days on eight GPUs, a small fraction of the training costs of the                             │
+│                                                                                                                 │
+│  best models from the literature. We show that the Transformer generalizes well to                              │
+│                                                                                                                 │
+│  other tasks by applying it successfully to English constituency parsing both with                              │
+│                                                                                                                 │
+│  large and limited training data.                                                                               │
+│                                                                                                                 │
+│  ∗Equal contribution. Listing order is random. Jakob proposed replacing RNNs with self-attention and started    │
+│                                                                                                                 │
+│  the effort to evaluate this idea. Ashish, with Illia, designed and implemented the first Transformer models    │
+│  and                                                                                                            │
+│                                                                                                                 │
+│  has been crucially involved in every aspect of this work. Noam proposed scaled dot-product attention,          │
+│  multi-head                                                                                                     │
+│                                                                                                                 │
+│  attention and the parameter-free position representation and became the other person involved in nearly every  │
+│                                                                                                                 │
+│  detail. Niki designed, implemented, tuned and evaluated countless model variants in our original codebase and  │
+│                                                                                                                 │
+│  tensor2tensor. Llion also experimented with novel model variants, was responsible for our initial codebase,    │
+│  and                                                                                                            │
+│                                                                                                                 │
+│  efficient inference and visualizations. Lukasz and Aidan spent countless long days designing various parts of  │
+│  and                                                                                                            │
+│                                                                                                                 │
+│  implementing tensor2tensor, replacing our earlier codebase, greatly improving results and massively            │
+│  accelerating                                                                                                   │
+│                                                                                                                 │
+│  our research.                                                                                                  │
+│                                                                                                                 │
+│  †Work performed while at Google Brain.                                                                         │
+│                                                                                                                 │
+│  ‡Work performed while at Google Research.                                                                      │
+│                                                                                                                 │
+│                                                                                                                 │
+│                                                                                                                 │
+│  our research.                                                                                                  │
+│                                                                                                                 │
+│  †Work performed while at Google Brain.                                                                         │
+│                                                                                                                 │
+│  ‡Work performed while at Google Research.                                                                      │
+│                                                                                                                 │
+│  31st Conference on Neural Information Processing Systems (NIPS 2017), Long Beach, CA, USA.                     │
+│                                                                                                                 │
+│  arXiv:1706.03762v7  [cs.CL]  2 Aug 2023                                                                        │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+INFO:agentic_rag:[fefd94] Retriever Agent  step:AgentFinish The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score establishes a new state-of-th ...
+  📝 Retriever Agent  | step:AgentFinish | The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score ...
+[Finalize] todos_count=0, todos_with_results=0
+╭───────────────────────────────────────────── ✅ Agent Final Answer ─────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Agent: Retrieval Specialist                                                                                    │
+│                                                                                                                 │
+│  Final Answer:                                                                                                  │
+│  The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task.  │
+│  This score establishes a new state-of-the-art, outperforming the best previously reported models by more than  │
+│  2.0 BLEU points. The training for this model took 3.5 days on 8 P100 GPUs, and even the base model surpassed   │
+│  all previously published models and ensembles at a fraction of the training cost of any competitive models     │
+│  (source: "Attention Is All You Need," Section 6.1 Machine Translation).                                        │
+│                                                                                                                 │
+│  Sources: "Attention Is All You Need," Section 6.1 Machine Translation.                                         │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+INFO:agentic_rag:[fefd94] Retrieval Specialist task_done      The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score establishes a new state-of-th ...
+  📝 Retrieval Specialist | task_done      | The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score ...
+╭────────────────────────────────────────────── 📋 Task Completion ───────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Task Completed                                                                                                 │
+│  Name: User question: 'What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?'  │
+│  Router decision: route=pdf_search; reason=The BLEU score achieved by the Transformer (big) model on WMT 2014   │
+│  English-to-German is detailed in the 'Attention Is All You Need' paper.                                        │
+│                                                                                                                 │
+│  Use the PDF search tool with the query 'BLEU score Transformer big model WMT 2014 English-German               │
+│  site:arxiv.org' (you may refine it and search again once). Cite the paper section(s) the evidence comes from.  │
+│  Answer ONLY with information supported by the retrieved evidence. If the evidence is insufficient, say so.     │
+│  Agent: Retrieval Specialist                                                                                    │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────── Crew Completion ────────────────────────────────────────────────╮
+│                                                                                                                 │
+│  Crew Execution Completed                                                                                       │
+│  Name: crew                                                                                                     │
+│  ID: 1750dfc1-e69d-4804-b770-1fe9c899a9b4                                                                       │
+│  Final Output: The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German      │
+│  translation task. This score establishes a new state-of-the-art, outperforming the best previously reported    │
+│  models by more than 2.0 BLEU points. The training for this model took 3.5 days on 8 P100 GPUs, and even the    │
+│  base model surpassed all previously published models and ensembles at a fraction of the training cost of any   │
+│  competitive models (source: "Attention Is All You Need," Section 6.1 Machine Translation).                     │
+│                                                                                                                 │
+│  Sources: "Attention Is All You Need," Section 6.1 Machine Translation.                                         │
+│                                                                                                                 │
+│                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+INFO:agentic_rag:[fefd94] Retriever Agent  final_answer   The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score establishes a new state-of-th ...
+INFO:agentic_rag:[fefd94] Coordinator      complete       Done in 7.6s
+  📝 Retriever Agent  | final_answer   | The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score ...
+  📝 Coordinator      | complete       | Done in 7.6s
+❓ What BLEU score did the Transformer (big) model achieve on WMT 2014 English-to-German?
+Route: pdf_search | Router reason: The BLEU score achieved by the Transformer (big) model on WMT 2014 English-to-German is detailed in the 'Attention Is All You Need' paper. | Time: 7.58s
+
+The Transformer (big) model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task. This score establishes a new state-of-the-art, outperforming the best previously reported models by more than 2.0 BLEU points. The training for this model took 3.5 days on 8 P100 GPUs, and even the base model surpassed all previously published models and ensembles at a fraction of the training cost of any competitive models (source: "Attention Is All You Need," Section 6.1 Machine Translation).
+
+Sources: "Attention Is All You Need," Section 6.1 Machine Translation.
+
+
+
+
+
+
+
+
+
+
+
+=======================
+
+
+Question 2: "What BLEU score did the Transformer (big) model achieve?"
+1. The question typed by the user is received by Crew AI.
+
+2. The question is then forwarded to the Router Agent.
+
+3. After the decision of the Router with the help of the LLM **(GPT-4o-mini)**, whether the answer is in the attached PDF, Web, or is it a query that can be answered using the **LLM's own** memory **(general knowledge)**. In case, the answer is based in PDF. **The decision is returned in a fixed format: route = pdf_search, the reason, and a search query.** Please note that Router itself does not answer the question **and has no tools**.
+
+4. The decision is passed to the Retriever to act on it. **The Retriever is given only the PDF search tool, so it cannot search the wrong source.**
+
+5. The Retriever with the help of LLM uses the tools to search for the answers in PDF. **The LLM decides what to search for, and Crew AI runs the PDF search tool, which returns the most relevant parts of the paper.**
+
+6. The searched answer is refined by the LLM and passed again to Retriever. **The LLM writes the answer only from the retrieved text and adds the source (Section 6.1).**
+7. The Retriever passes the final answer to Crew AI, which is then sent to the user **(answer: displays section number, for example, 28.4). Every step is recorded in the trace logs.
+
+
+
+=======================
+
+1. The question typed by the user is received by Crew AI.
+2. The question is then forwarded to the Router Agent.
+3. The Router, with the help of the AI model, decides where the answer can be found: in the attached PDF, on the web, or from the AI model's own general knowledge. In this case, the answer is in the PDF. The Router writes down its decision in a fixed format: where to look, why, and what to search for. Please note that the Router itself does not answer the question and does not search anything.
+4. The decision is passed to the Retiever Agent to act on it. The Retriever is allowed to search only the PDF, so it cannot look in the wrong place.
+5. The Retriever with the help of LLM uses the tools to search for the answers in PDF. The LLM decides what to search for and how, with the help of PDF Search tool provided by Crew AI, which returns the most relevant parts of the papers. 
+6. The searched result is refined by the LLM and passed again to Retreiver. The LLM writes the answer only from the retrived text and adds the source (section from which the answer is received, 6.1).
+7. The Reriever passes the final answer to Crew AI, which is then sent to the user. Every step is recorded in the trace logs.
+
+
+
+
+
+
+Which means the PDF Search tool searches the most relevant parts, and LLM runs cosinity test to match the vectors to convert the text?
+
+
+
+
+# Router - Retrieval RAG Project
+
+This project builds two-agent (Retreival-Augmented Reality) RAG system using CreW AI
+
+Crew AI provides necessary tools, python libraries, and does important coordination work for buildig **Agents** and **RAGs**. The CreW AI acts like a orchestration level, which coordinates to call LLMs, tools, and so on.
+It is instrumental in connecting two or agents. Two or more agents are generally required to process different tasks. This helps to divide load amoung multiple agents helps for the agents to be more effecient.
+
+___
+___
+
+## Agents
+The following two agents are built in the project:
+* Router Agent: When a query is sent by the user, this agent directs the **Retrieval** agent to refer to the correct source of information using the appropriate tools. In this project, the information can be found in the PDF, in the Web, or it can be answered using the memory.
+* Retrieval Agent: This agent takes acts based on the decision taken by the Router agent. For exampl, if the Router agent directs to the PDF document, Retrieval Agent spcifically searches for answers in the PDF. This saves time of the Retriever agent to look somewhere else.
+
+
+
+
+
+
+
+
+# Router - Retriever RAG Project
+
+This project builds a two-agent RAG (Retrieval-Augmented Generation) system using CrewAI.
+
+CrewAI is a Python library that provides the necessary tools and does important coordination work for building **Agents** and **RAG** systems. CrewAI acts like an orchestration layer, which coordinates calls to LLMs, tools, and so on.
+
+It is instrumental in connecting two or more agents. Two or more agents are generally required to process different tasks. This helps to divide the load among multiple agents and helps the agents to be more efficient.
+
+## Agents
+
+The following two agents are built in the project:
+
+* Router Agent: When a query is sent by the user, this agent directs the **Retriever** agent to the correct source of information. In this project, the information can be found in the PDF, on the Web, or it can be answered using the AI model's own general knowledge. The Router itself does not search or answer the question.
+* Retriever Agent: This agent acts based on the decision taken by the Router agent. For example, if the Router agent directs to the PDF document, the Retriever Agent searches for answers only in the PDF, using the PDF search tool. This saves the Retriever agent time looking somewhere else.
+
+
+
+
+
+================
+
+# Router - Retrieval RAG Project
+
+This project builds two-agent (Retreival-Augmented Reality) RAG system using CreW AI
+
+Crew AI is a python library that provides necessary tools and important coordination work for buildig **Agents** and **RAGs** systems. The CreW AI acts like a orchestration level, which coordinates to call LLMs, tools, and so on.
+It is instrumental in connecting two or more agents. Two or more agents are generally required to process different tasks. This helps to divide load amoung multiple agents helps the agents to be more effecient.
+
+___
+___
+
+## Agents
+The following two agents are built in the project:
+* Router Agent: When a query is sent by the user, this agent directs the **Retrieval** agent to refer to the correct source of information. In this project, the information can be found in the PDF, on the Web, or it can be answered  using the AI model's (LLM) own general knowledge. The Router itself does not search or answer the question.
+* Retrieval Agent: This agent acts based on the decision taken by the Router agent. For exampl, if the Router agent directs to the PDF document, the Retrieval Agent spcifically searches for answers only in the PDF. This saves time of the Retriever agent to looking somewhere else.
+
+## Knowledge Source
+The following tools are use for the following search:
+* PDF Search: pdf_search. This tool comes for Crew AI.
+* Web search: web_search. This tool is provided by Tavilly.
+* LLM General Knowledge: direct_llm
+
+## Setup and installation
+
+This sections helps us to configure the following keys for retrival route:
+* Open API key: Use this key to connect to LLM. This key is required to search for PDF document and answers based on general knowledge that needs no retrival.
+* Tavily keys: Use to search the web if the Router directs the query to web search.
+
+The tools we are using here are (PDF Search) and web search tool (Tavilly). These two tools are used by Retriever
+For exaample, Question 2: "What BLEU score did the Transformer (big) model achieve?"
+1. The question typed by the user is received by Crew AI.
+2. The question is then forwarded to the Router Agent.
+3. The Router, with the help of the LLM (AI Model), decides where the answer can be found: in the attached PDF, on the web, or from the AI model's own general knowledge. In this case, the answer is in the PDF. The Router writes down its decision in a fixed format: where to look, why, and what to search for. Please note that the Router itself does not answer the question and does not search anything. The Router Agent fixes the tool that needs to be used and passes it to the Retriever Agent.
+4. The decision is passed to the Retriever Agent to act on it. The Retriever is allowed to search only the PDF, so it cannot look in the wrong place.
+5. The Retriever with the help of LLM uses the tools to search for the answers in PDF. The LLM decides what to search for and how, with the help of PDF Search tool provided by Crew AI, which returns the most relevant parts of the papers. 
+6. The searched result is refined by the LLM and passed again to Retriever. The LLM writes the answer only from the retrived text and adds the source (section from which the answer is received, 6.1).
+7. The Reriever passes the final answer to Crew AI, which is then sent to the user. Every step is recorded in the trace logs.
+
+
+================
+
+
+# Router - Retriever RAG Project
+
+This project builds a two-agent RAG (Retrieval-Augmented Generation) system using CrewAI.
+
+CrewAI is a Python library that provides the necessary tools and does important coordination work for building **Agents** and **RAG** systems. CrewAI acts like an orchestration layer, which coordinates calls to LLMs, tools, and so on.
+
+It is instrumental in connecting two or more agents. Multiple agents are useful when a task can be divided into different roles. Each agent focuses on one job, which makes the system more reliable and easier to check and fix.
+
+---
+
+## Agents
+
+The following two agents are built in the project:
+
+* Router Agent: When a query is sent by the user, this agent directs the **Retriever** agent to the correct source of information. In this project, the information can be found in the PDF, on the Web, or it can be answered using the AI model's (LLM) own general knowledge. The Router itself does not search or answer the question.
+* Retriever Agent: This agent acts based on the decision taken by the Router agent. For example, if the Router agent directs to the PDF document, the Retriever Agent searches for answers only in the PDF. This saves the Retriever agent time looking somewhere else.
+
+## Knowledge Sources
+
+The following routes are used for the following searches:
+
+* PDF Search: `pdf_search`. This tool comes from CrewAI (crewai-tools).
+* Web Search: `web_search`. This tool is provided by Tavily.
+* LLM General Knowledge: `direct_llm`. No tool is used; the LLM answers directly.
+
+## Setup and installation
+
+This section helps us to configure the following keys:
+
+* OpenAI API key: Use this key to connect to the LLM. This key is also required to search the PDF document, and to answer questions based on general knowledge that need no retrieval.
+* Tavily API key: Use this key to search the web if the Router directs the query to web search.
+
+The tools we are using here are the PDF search tool (CrewAI) and the web search tool (Tavily). These two tools are used only by the Retriever.
+
+## How it works (example)
+
+Question 2: "What BLEU score did the Transformer (big) model achieve?"
+
+1. The question typed by the user is received by CrewAI.
+
+2. The question is then forwarded to the Router Agent.
+
+3. The Router, with the help of the LLM (AI model), decides where the answer can be found: in the attached PDF, on the web, or from the AI model's own general knowledge. In this case, the answer is in the PDF. The Router writes down its decision in a fixed format: where to look, why, and what to search for. Please note that the Router itself does not answer the question and does not search anything. Based on the Router's decision, the Retriever Agent is given only the matching tool.
+
+4. The decision is passed to the Retriever Agent to act on it. The Retriever is allowed to search only the PDF, so it cannot look in the wrong place.
+5. The Retriever, with the help of the LLM, uses the tool to search for the answer in the PDF. The LLM decides what to search for, and the PDF search tool provided by CrewAI returns the most relevant parts of the paper.
+6. The searched result is refined by the LLM and passed again to the Retriever. The LLM writes the answer only from the retrieved text and adds the source (the section from which the answer is taken, 6.1).
+7. The Retriever passes the final answer to CrewAI, which is then sent to the user. Every step is recorded in the trace logs.
+
+## Challenges faced and trade-offs made
+
+* Python 3.14 was not supported by CrewAI, so the project was run on Google Colab.
+* Upgrading all packages caused version conflicts (pandas), so only the missing packages were installed.
+* CrewAI could not run directly inside Colab (event loop error), so each agent run was started in a separate thread.
+* Using two agents adds one extra LLM call per question, but makes each decision clear and easy to check.
+* If the Router's decision cannot be read, a simple keyword-based backup router is used.
+
+
+
+
+
+
+
+
+
+
+* Python 3.14 was not supported by CrewAI, so the project was run on Google Colab.
+   Crew AI in Google Collab does not support Py 3.14, so we had to install version Python (3.10 - 3.13) to avoid conflicts.
+
+
+
+* Upgrading all packages caused version conflicts (pandas), so only the missing packages were installed.
+
+%pip install -q -U crewai crewai-tools langchain-community tavily-python pydantic pandas matplotlib python-dotenv
+%pip install -q crewai crewai-tools langchain-community tavily-python python-dotenv
+
+Here we used the second command as the **-U** universally forces newest version, even if they're already installed. This was creating conflict as pandas with lower were already installed.
+Uisng **-q** removed the requirement of isntalling pandas of new versions and avoided conflict
+
+
+
+
+
+
+
+
+
+
+
+
+

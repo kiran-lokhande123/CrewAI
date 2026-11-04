@@ -1,0 +1,21 @@
+2026-10-29 13:50:39: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-29 13:59:04: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="started"
+2026-10-29 13:59:07: task_name="None", task="User question: 'What is multi-head attention and why does the Transformer use it?'
+
+Decide the single best retrieval route:
+- pdf_search: answerable from the 'Attention Is All You Need' Transformer paper
+- web_search: needs fresh / external / post-2017 information from the internet
+- direct_llm: simple general question that needs no retrieval
+Also write an optimised search_query for the chosen tool.", agent="Query Router", status="completed", output="{"route":"pdf_search","reason":"The question specifically asks about multi-head attention and its purpose in the Transformer, which is covered in detail in the 'Attention Is All You Need' paper.","search_query":"What is multi-head attention and why does the Transformer use it site:arxiv.org/abs/1706.03762"}"

@@ -1,123 +1,53 @@
-# Agentic RAG: Router–Retriever System with PDF and Web Search Tools
+# Router - Retrieval RAG Project
 
-A two-agent Retrieval-Augmented Generation (RAG) system built with **CrewAI**. A **Router Agent** classifies each question, and a **Retriever Agent** answers it using the right source:
+This project builds two-agent (Retreival-Augmented Reality) RAG system using **CreW AI**
 
-- **PDF search** (static knowledge): the paper *"Attention Is All You Need"* (the Transformer paper)
-- **Web search** (dynamic knowledge): live internet results through Tavily
-- **Direct LLM** (optional): simple general questions that need no retrieval
+Crew AI is a python library that provides necessary tools and important coordination work for buildig **Agents** and **RAGs** systems. The CreW AI acts like a orchestration level, which coordinates calls to LLMs, tools, and so on.
+It is instrumental in connecting two or more agents. Multiple agents are useful when a task can be divided into different roles. Each agent focuses on one job, which makes the system more reliable and easier to check and fix.
 
----
+## Agents
+The following two agents are built in the project:
+* Router Agent: When a query is sent by the user, this agent directs the **Retrieval** agent to refer to the correct source of information. In this project, the information can be found in the PDF, on the Web, or it can be answered  using the AI model's (LLM) own general knowledge. The Router itself does not search or answer the question.
+* Retrieval Agent: This agent acts based on the decision taken by the Router agent. For exampl, if the Router agent directs to the PDF document, the Retrieval Agent spcifically searches for answers only in the PDF. This saves time of the Retriever agent to looking somewhere else.
 
-## 1. System architecture
+## Knowledge Source
+The following tools/routes are used for the following search:
+* PDF Search: pdf_search. This tool comes for Crew AI (crewai-tools)..
+* Web search: web_search. This tool is provided by Tavilly.
+* LLM General Knowledge: direct_llm: No tool is used; the LLM answers directly.
 
-```
-                    ┌──────────────────────┐
-  User question ──► │     Router Agent     │  (no tools, temperature 0)
-                    │ classify → JSON      │
-                    └──────────┬───────────┘
-                               │ RouteDecision {route, reason, search_query}
-                ┌──────────────┼──────────────────┐
-                ▼              ▼                  ▼
-         pdf_search       web_search          direct_llm
-      PDFSearchTool     Tavily search        (no tool)
-     (vector search)   (TavilySearchResults)
-                └──────────────┼──────────────────┘
-                               ▼
-                    ┌──────────────────────┐
-                    │   Retriever Agent    │  gets ONLY the chosen tool
-                    │ retrieve → answer    │
-                    └──────────┬───────────┘
-                               ▼
-              Grounded answer + sources + trace log
-```
+## Setup and installation
 
-| Component | Technology |
-|---|---|
-| Orchestration | CrewAI (`Agent`, `Task`, `Crew`, `Process.sequential`) |
-| LLM | OpenAI `gpt-4o-mini` (via `crewai.LLM`) |
-| PDF retrieval | `crewai_tools.PDFSearchTool` (chunks + embeddings + vector store) |
-| Web retrieval | `langchain_community.tools.tavily_search.TavilySearchResults`, wrapped with CrewAI `@tool` |
-| Structured routing | Pydantic model `RouteDecision` (`output_pydantic`) |
-| Logging | CrewAI `step_callback` / `task_callback`, `output_log_file`, Python `logging`, JSONL trace file |
-| Visualisation | pandas tables and matplotlib charts |
+This sections helps us to configure the following keys:
+* Open API key: Use this key to connect to the LLM. This key is required to search the PDF document and to answers questions based on general knowledge that needs no retrival.
+* Tavily keys: Use to search the web if the Router directs the query to web search.
 
----
+The tools we are using here are the PDF search tool (CrewAI) and the web search tool (Tavily). These two tools are used only by the Retriever.
 
-## 2. Agents: logic and responsibilities
+## How it works (for example) 
+For example, Question 2: "What BLEU score did the Transformer (big) model achieve?"
 
-### Router Agent: "Query Router"
-- **Input:** the user's natural-language question.
-- **Logic:** its backstory describes exactly what the PDF covers (architecture, attention, positional encoding, training, BLEU results and so on). It chooses:
-  - `pdf_search` for anything about the Transformer paper
-  - `web_search` for current, recent or external facts (news, latest models, versions, events after 2017)
-  - `direct_llm` for trivial general questions (for example, unit conversion)
-- **Output:** `RouteDecision` JSON with `route`, `reason` and an optimised `search_query`.
-- **Tools:** none. It only reasons, which keeps routing fast, cheap and predictable.
+1. The question typed by the user is received by Crew AI.
+2. The question is then forwarded to the Router Agent.
+3. The Router, with the help of the LLM (AI Model), decides where the answer can be found: in the attached PDF, on the web, or from the AI model's own general knowledge. In this case, the answer is in the PDF. The Router writes down its decision in a fixed format: where to look, why, and what to search for. Please note that the Router itself does not answer the question and does not search anything. The Router Agent fixes the tool that needs to be used and passes it to the Retriever Agent.
+4. The decision is passed to the Retriever Agent to act on it. The Retriever is allowed to search only the PDF, so it cannot look in the wrong place.
+5. The Retriever with the help of LLM uses the tools to search for the answers in PDF. The LLM decides what to search for and how, with the help of PDF Search tool provided by Crew AI, which returns the most relevant parts of the papers.
+6. The searched result is refined by the LLM and passed again to Retriever. The LLM writes the answer only from the retrived text and adds the source (section from which the answer is received, 6.1).
+7. The Reriever passes the final answer to Crew AI, which is then sent to the user. Every step is recorded in the trace logs.
 
-### Retriever Agent: "Retrieval Specialist"
-- **Input:** the question plus the router's decision.
-- **Logic:** calls its single assigned tool, reads the evidence and writes a 3–8 sentence answer using **only** that evidence. It cites PDF sections or web URLs and says so when the evidence is insufficient.
-- **Output:** the final answer with a `Sources:` line.
-- **Tools:** whichever tool the router picked, and nothing else.
 
----
+## Challenges faced and trade-offs made
 
-## 3. Coordination flow
+* Python 3.14 was not supported by CrewAI, so the project was run on Google Colab.
+  
+**Crew AI does not support Py 3.14, which was installed on my laptop. So the project was moved to Google Colab, which already uses a supported Python version (3.13). CrewAI supports Python 3.10 - 3.13.**
+* Upgrading all packages caused version conflicts (pandas), so only the missing packages were installed.
 
-1. `answer_question(question)` creates a run id and logs the question.
-2. **Routing crew** (Router Agent + routing task) runs and returns a `RouteDecision`.
-3. The coordinator validates the decision. If the LLM output can't be parsed, a **keyword fallback router** is used.
-4. A Retriever Agent is created with the tool for that route (`TOOLS_BY_ROUTE`).
-5. **Retrieval crew** (Retriever Agent + retrieval task that includes the router decision) runs and returns the answer.
-6. Every hand-off, thought, tool call, tool result and final answer is logged to:
-   - `TRACE` (in memory, shown as a table and charts in the notebook)
-   - `logs/agentic_rag_trace.jsonl` (machine-readable audit trail)
-   - `logs/agentic_rag.log`, `logs/crew_router.log`, `logs/crew_retriever.log`
-7. The notebook shows reasoning-trace visualisations: a step-by-step trace, swim-lane timelines per run, route distribution, latency per route, agent/event counts and an architecture diagram.
+%pip install -q -U crewai crewai-tools langchain-community tavily-python pydantic pandas matplotlib python-dotenv
+%pip install -q crewai crewai-tools langchain-community tavily-python python-dotenv
 
-### Why CrewAI?
-- Role, goal and backstory map directly to a role-based multi-agent design.
-- Native tools (`PDFSearchTool`) and an easy `@tool` wrapper for LangChain tools such as Tavily.
-- Structured outputs (`output_pydantic`) make agent-to-agent hand-offs machine-readable.
-- Built-in callbacks, verbose mode and log files give traceability with little code.
-- Lighter than hand-building a state graph (for example, LangGraph) for a simple two-step sequential pipeline.
+**Here we used the second command as the -U upgrades to newer versions, even if they're already installed. This was creating conflict as an older version of pandas was already installed, which Colab needs. We removed -U and put the older pandas version back, so no conflict was created.**
 
----
-
-## 4. How to run
-
-1. Put these files in one folder:
-   - `Agentic_RAG_Router_Retriever.ipynb`
-   - `trasformer_research_paper-dataset.pdf`
-2. Create a `.env` file:
-   ```
-   OPENAI_API_KEY=sk-...
-   TAVILY_API_KEY=tvly-...
-   ```
-   (If the keys are missing, the notebook prompts for them securely.)
-3. Use Python 3.10–3.13. Open the notebook and choose **Run All**. The first cell installs:
-   `crewai crewai-tools langchain-community tavily-python pydantic pandas matplotlib python-dotenv`
-4. The demo runs six questions: three PDF, two web and one direct. Section 9 lets you ask your own questions.
-
----
-
-## 5. Challenges faced and trade-offs made
-
-| Challenge | Approach / trade-off |
-|---|---|
-| **Routing errors on ambiguous questions** (for example, "What is a Transformer?" could be the paper or the web) | The router backstory lists the PDF scope in detail; temperature 0 keeps decisions consistent. A keyword fallback covers malformed output. Trade-off: one LLM call per question adds latency and cost. |
-| **Retriever using the wrong tool** | The Retriever Agent is rebuilt per question with **only** the chosen tool. Trade-off: it can't switch sources on its own if evidence is weak; the router is the single point of decision. |
-| **Hallucination / ungrounded answers** | The prompts require answers to use only the retrieved evidence, with citations and an explicit "insufficient evidence" option. Trade-off: answers can be shorter or more cautious. |
-| **Two crews instead of one** | The Python-coordinated hand-off makes the input/output flow explicit, testable and fully logged. Trade-off: slightly more code than a single crew with `Process.hierarchical`. |
-| **Tool and library version changes** (CrewAI callbacks return different step objects; `TavilySearchResults` is being replaced by `langchain-tavily`) | The step callback reads fields defensively with `getattr`; the Tavily call is wrapped in try/except. |
-| **PDF indexing cost** | `PDFSearchTool` embeds the PDF once per session, so the first query is slower. Trade-off: the default chunking is simple, and tables or equations in the paper may be split across chunks. |
-| **Web results quality** | Limited to the top 4 results with source URLs, which balances context size against coverage. |
-| **Cost / latency** | `gpt-4o-mini` keeps cost low; a larger model would route and write more accurately at a higher cost. |
-
----
-
-## 6. Possible improvements
-- A hybrid route (PDF + web) for questions that compare the paper with newer models
-- A self-check step (a third "Grader" agent) that re-routes when evidence is weak
-- Result caching, and evaluation with a labelled routing test set (routing accuracy)
-- CrewAI Flows, or LangGraph for conditional loops
+* CrewAI could not run directly inside Colab (event loop error), so each agent run was started in a separate thread.
+* Using two agents adds one extra LLM call per question, but makes each decision clear and easy to check.
+* If the Router's decision cannot be read, a simple keyword-based backup router is used.

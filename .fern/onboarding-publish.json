@@ -1,0 +1,10 @@
+{
+  "desiredContentHash": "0f1921b58ec8d61e29abc8bcfb9d6a9f7bd1a1306c318c0d0f3544274683d732",
+  "docsUrl": "https://microsoft.docs.buildwithfern.com",
+  "starter": {
+    "repoOwner": "fern-api",
+    "repoName": "docs-starter-internal",
+    "commitSha": "7a136fbd26e750f96d049759bc080129b23e7a5c",
+    "label": "2026-07-layouts-launch"
+  }
+}
